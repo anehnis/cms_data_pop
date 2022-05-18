@@ -3,7 +3,7 @@ echo $HOSTNAME|grep -q 'ithdp-client' || return
 source /cvmfs/sft.cern.ch/lcg/etc/hadoop-confext/hadoop-setconf.sh analytix 3.2 spark3
 
 dates="2020/*/*"
-outprefix="root://eosuser/eos/user/n/ncsmith/hadoop-transfer/" 
+outprefix="root://eosuser/eos/user/a/aehnis/hadoop-transfer/" 
 
 hdfs dfs -rm -R hdfs://analytix/user/$USER/working_set_cmssw
 spark-submit generate_working_set.py --source cmssw --out hdfs://analytix/user/$USER/working_set_cmssw --dates $dates

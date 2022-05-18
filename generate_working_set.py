@@ -94,7 +94,7 @@ def get_df_cmssw(spark, dates):
     )
     df_dom = (
         spark.read
-        .json("/user/chmcgrad/domain_map/*.json")
+        .json("/user/aehnis/domain_map/*.json")
     )
     df = (
         df.filter(df.file_lfn.startswith("/store/"))
@@ -264,7 +264,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Computes working set (unique blocks accessed) per day, partitioned by various fields."
     )
-    defpath = "hdfs://analytix/user/chmcgrad/working_set_day"
+    defpath = "hdfs://analytix/user/aehnis/working_set_day"
     parser.add_argument(
         "--out",
         metavar="OUTPUT",
